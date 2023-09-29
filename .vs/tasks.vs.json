@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "задача-Resources",
+      "appliesTo": "FamiliyaAutoservice_1/FamiliyaAutoservice_1/Properties/Resources.resx",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "задача-service_logo",
+      "appliesTo": "FamiliyaAutoservice_1/FamiliyaAutoservice_1/Resources/service_logo.png",
+      "type": "launch"
+    }
+  ]
+}

@@ -23,8 +23,10 @@ namespace FamiliyaAutoservice_1
         public ServicePage()
         {
             InitializeComponent();
-        }
+            var currentServices = Baranov_AutoserviceEntities1.GetContext().Service.ToList();
 
+            ServiceListView.ItemsSource = currentServices;
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Manager.MainFrame.Navigate(new AddEditPage());

@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FamiliyaAutoservice_1"
         mc:Ignorable="d"
-        Title="Автосервис Баранов" Height="450" Width="800" FontFamily ="Tw Cen MT" Icon="Resources/service_logo.ico">
+        Title="Автосервис Баранов" Height="450" Width="800" FontFamily ="Tw Cen MT" Icon="Image/service_logo.ico">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="75"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
-        <Image Source="Resources/service_logo.ico" HorizontalAlignment="Left"></Image>
+        <Image Source="Image/service_logo.ico" HorizontalAlignment="Left"></Image>
         
         <TextBlock Text="Услуги" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
         <Frame Grid.Row="1" Name="MainFrame" ContentRendered="MainFrame_ContentRendered" NavigationUIVisibility="Hidden"></Frame>

@@ -46,7 +46,7 @@
                         <TextBlock Text="{Binding DurationInSeconds}" Grid.Column ="1" Grid.Row="1" HorizontalAlignment="Right" FontSize="20" ></TextBlock>
                         
 
-                        <TextBlock Text="{Binding Discount, StringFormat=*скидка{0}%}"
+                        <TextBlock Text="{Binding Discount, StringFormat=*скидка {0}%}"
                             Opacity="{Binding Discount}" Margin="5" Grid.Column="1"
                             Grid.Row="2" HorizontalAlignment="Left" FontSize="16"></TextBlock>
 

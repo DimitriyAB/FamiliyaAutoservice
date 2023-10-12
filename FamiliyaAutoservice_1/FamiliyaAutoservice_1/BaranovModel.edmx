@@ -597,7 +597,7 @@
           <End Role="Client" Type="Self.Client" Multiplicity="*" />
           <End Role="Tag" Type="Self.Tag" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="Baranov_AutoserviceEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Baranov_AutoserviceEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Client" EntityType="Self.Client" />
           <EntitySet Name="ClientService" EntityType="Self.ClientService" />
           <EntitySet Name="DocumentByService" EntityType="Self.DocumentByService" />
@@ -659,7 +659,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище Baranov_AutoserviceModelContainer" CdmEntityContainer="Baranov_AutoserviceEntities1">
+        <EntityContainerMapping StorageEntityContainer="Хранилище Baranov_AutoserviceModelContainer" CdmEntityContainer="Baranov_AutoserviceEntities2">
           <EntitySetMapping Name="Client">
             <EntityTypeMapping TypeName="Baranov_AutoserviceModel.Client">
               <MappingFragment StoreEntitySet="Client">

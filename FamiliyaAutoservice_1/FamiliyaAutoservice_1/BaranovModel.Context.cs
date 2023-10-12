@@ -13,21 +13,19 @@ namespace FamiliyaAutoservice_1
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Baranov_AutoserviceEntities1 : DbContext
+    public partial class Baranov_AutoserviceEntities2 : DbContext
     {
-        private static Baranov_AutoserviceEntities1 _context;
+        private static Baranov_AutoserviceEntities2 _context;
 
-        public static Baranov_AutoserviceEntities1 GetContext()
+        public static Baranov_AutoserviceEntities2 GetContext()
         {
-            if( _context == null )
-                _context = new Baranov_AutoserviceEntities1();
-
+            if(_context == null)
+                _context = new Baranov_AutoserviceEntities2();
             return _context;
         }
-        public Baranov_AutoserviceEntities1()
-            : base("name=Baranov_AutoserviceEntities1")
+        public Baranov_AutoserviceEntities2()
+            : base("name=Baranov_AutoserviceEntities2")
         {
-            
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

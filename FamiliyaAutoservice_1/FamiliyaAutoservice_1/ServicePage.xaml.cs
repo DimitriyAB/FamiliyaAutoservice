@@ -23,7 +23,7 @@ namespace FamiliyaAutoservice_1
         public ServicePage()
         {
             InitializeComponent();
-            var currentServices = Baranov_AutoserviceEntities1.GetContext().Service.ToList();
+            var currentServices = Baranov_AutoserviceEntities2.GetContext().Service.ToList();
 
             ServiceListView.ItemsSource = currentServices;
         }

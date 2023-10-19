@@ -46,7 +46,7 @@
                          Name="RButtonDown"
                          Width="300" FontSize="20" Checked="RButtonDown_Checked_1"></RadioButton>
         </StackPanel>
-        <Button Content="Добавить" Name="AddButton" Click="AddButton_Click_1"
+        <Button Content="Добавить" Name="AddButton" Click="AddButton_Click"
                 HorizontalAlignment="Right" VerticalAlignment="Bottom"></Button>
         <ListView Name ="ServiceListView" Grid.Row="2"> 
             <ListView.ItemTemplate>

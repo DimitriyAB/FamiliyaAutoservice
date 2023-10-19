@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "D:\C# scripts\repositLab4\FamiliyaAutoservice_1\FamiliyaAutoservice_1\BaranovModel.edmx" включено. 
+﻿// Создание кода T4 для модели "D:\C# scripts\RepositAuto\FamiliyaAutoservice_1\FamiliyaAutoservice_1\BaranovModel.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

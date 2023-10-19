@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\C# scripts\repositLab4\FamiliyaAutoservice_1\FamiliyaAutoservice_1\obj\Debug\
+D:\C# scripts\RepositAuto\FamiliyaAutoservice_1\FamiliyaAutoservice_1\obj\Debug\
 FamiliyaAutoservice_1
 none
 false
 DEBUG;TRACE
-D:\C# scripts\repositLab4\FamiliyaAutoservice_1\FamiliyaAutoservice_1\App.xaml
+D:\C# scripts\RepositAuto\FamiliyaAutoservice_1\FamiliyaAutoservice_1\App.xaml
 3-1661540727
 2-1375211657
 221237348248
-191587296688
+19-2049808530
 AddEditPage.xaml;MainWindow.xaml;ServicePage.xaml;
 
 False

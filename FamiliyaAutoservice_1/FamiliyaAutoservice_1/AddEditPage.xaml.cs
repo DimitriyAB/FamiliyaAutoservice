@@ -54,17 +54,13 @@ namespace FamiliyaAutoservice_1
                 MessageBox.Show(errors.ToString());
                 return;
             }
-            if(_currentServise.ID == 0) 
-            {
-                MessageBox.Show(errors.ToString());
-                return;
-            }
+            
             if (_currentServise.ID == 0)
-                Baranov_AutoserviceEntities2.GetContext().Service.Add(_currentServise);
+                Baranov_AutoserviceEntities3.GetContext().Service.Add(_currentServise);
 
             try
             {
-                Baranov_AutoserviceEntities2.GetContext().SaveChanges();
+                Baranov_AutoserviceEntities3.GetContext().SaveChanges();
                 MessageBox.Show("Информация сохранена");
                 Manager.MainFrame.GoBack();
             }

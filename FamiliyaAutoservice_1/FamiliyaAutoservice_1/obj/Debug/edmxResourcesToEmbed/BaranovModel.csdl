@@ -243,7 +243,7 @@
     <End Role="Client" Type="Self.Client" Multiplicity="*" />
     <End Role="Tag" Type="Self.Tag" Multiplicity="*" />
   </Association>
-  <EntityContainer Name="Baranov_AutoserviceEntities2" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="Baranov_AutoserviceEntities3" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Client" EntityType="Self.Client" />
     <EntitySet Name="ClientService" EntityType="Self.ClientService" />
     <EntitySet Name="DocumentByService" EntityType="Self.DocumentByService" />

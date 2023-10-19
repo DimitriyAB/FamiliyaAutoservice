@@ -23,7 +23,7 @@ namespace FamiliyaAutoservice_1
         public ServicePage()
         {
             InitializeComponent();
-            var currentServices = Baranov_AutoserviceEntities2.GetContext().Service.ToList();
+            var currentServices = Baranov_AutoserviceEntities3.GetContext().Service.ToList();
             ServiceListView.ItemsSource = currentServices;
             ComboType.SelectedIndex = 0;
             UpdateService();
@@ -31,7 +31,7 @@ namespace FamiliyaAutoservice_1
         }
         private void UpdateService()
         {
-            var currentServices = Baranov_AutoserviceEntities2.GetContext().Service.ToList();
+            var currentServices = Baranov_AutoserviceEntities3.GetContext().Service.ToList();
 
             if (ComboType.SelectedIndex == 0)
             {
@@ -93,7 +93,7 @@ namespace FamiliyaAutoservice_1
         {
             UpdateService();
         }
-        private void AddButton_Click_1(object sender, RoutedEventArgs e)
+        private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             Manager.MainFrame.Navigate(new AddEditPage(null));
         }
@@ -102,8 +102,8 @@ namespace FamiliyaAutoservice_1
         {
             if (Visibility == Visibility.Visible)
             {
-                Baranov_AutoserviceEntities2.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
-                ServiceListView.ItemsSource = Baranov_AutoserviceEntities2.GetContext().Service.ToList();
+                Baranov_AutoserviceEntities3.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+                ServiceListView.ItemsSource = Baranov_AutoserviceEntities3.GetContext().Service.ToList();
             }
         }
 

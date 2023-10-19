@@ -6,7 +6,9 @@
       xmlns:local="clr-namespace:FamiliyaAutoservice_1"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ServicePage">
+      Title="Услуги автосервиса" FontFamily="Tw Cen MT"
+      IsVisibleChanged="Page_IsVisibleChanged"> 
+    
 
     <Grid>
         <Grid.RowDefinitions>
@@ -44,6 +46,8 @@
                          Name="RButtonDown"
                          Width="300" FontSize="20" Checked="RButtonDown_Checked_1"></RadioButton>
         </StackPanel>
+        <Button Content="Добавить" Name="AddButton" Click="AddButton_Click_1"
+                HorizontalAlignment="Right" VerticalAlignment="Bottom"></Button>
         <ListView Name ="ServiceListView" Grid.Row="2"> 
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -83,12 +87,13 @@
                             Grid.Row="2" HorizontalAlignment="Left" FontSize="16"></TextBlock>
 
                         <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal">
-                            <Button Name="EditButton" Content="редактировать" Margin="2"></Button>
+                            <Button Name="EditButton" Content="редактировать" Margin="2" Click="EditButton_Click"></Button>
                             <Button Name="DeleteButton" Content="удалить" Margin="2"></Button>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        
     </Grid>
 </Page>

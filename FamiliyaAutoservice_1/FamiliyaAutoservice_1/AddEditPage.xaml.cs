@@ -47,7 +47,8 @@ namespace FamiliyaAutoservice_1
 
             if (string.IsNullOrWhiteSpace(_currentServise.DurationInSeconds))
                 errors.AppendLine("Укажите длительность услуги");
-            
+            if (string.IsNullOrWhiteSpace(_currentServise.Discount.ToString()))
+                _currentServise.Discount = 0;
             
             if(errors.Length > 0)
             {

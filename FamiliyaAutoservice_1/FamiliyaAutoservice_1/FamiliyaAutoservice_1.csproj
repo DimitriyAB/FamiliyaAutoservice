@@ -117,6 +117,9 @@
     <Compile Include="ServicePhoto.cs">
       <DependentUpon>BaranovModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="SingUpPage.xaml.cs">
+      <DependentUpon>SingUpPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tag.cs">
       <DependentUpon>BaranovModel.tt</DependentUpon>
     </Compile>
@@ -137,6 +140,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ServicePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SingUpPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -184,16 +191,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BaranovModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BaranovModel.edmx</DependentUpon>
-      <LastGenOutput>BaranovModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="BaranovModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BaranovModel.edmx</DependentUpon>
-      <LastGenOutput>BaranovModel.cs</LastGenOutput>
-    </Content>
     <Resource Include="Услуги автосервиса\398f102f-6c74-4b60-a60e-5585ec8e68f1.jpg" />
     <Resource Include="Услуги автосервиса\diz.jpg" />
     <Resource Include="Услуги автосервиса\rulevoe-upravlenie-avtomobilya.jpg" />
@@ -212,6 +209,18 @@
     <Resource Include="Услуги автосервиса\Топливная система.png" />
     <Resource Include="Услуги автосервиса\Шиномонтаж.jpg" />
     <Resource Include="Услуги автосервиса\Электрика.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BaranovModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BaranovModel.edmx</DependentUpon>
+      <LastGenOutput>BaranovModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="BaranovModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BaranovModel.edmx</DependentUpon>
+      <LastGenOutput>BaranovModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

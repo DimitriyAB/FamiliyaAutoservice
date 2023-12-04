@@ -130,3 +130,5 @@ D:\C# scripts\RepositAuto\FamiliyaAutoservice_1\FamiliyaAutoservice_1\obj\Debug\
 D:\C# scripts\RepositAuto\FamiliyaAutoservice_1\FamiliyaAutoservice_1\obj\Debug\FamiliyaAutoservice_1.csproj.CopyComplete
 D:\C# scripts\RepositAuto\FamiliyaAutoservice_1\FamiliyaAutoservice_1\obj\Debug\FamiliyaAutoservice_1.exe
 D:\C# scripts\RepositAuto\FamiliyaAutoservice_1\FamiliyaAutoservice_1\obj\Debug\FamiliyaAutoservice_1.pdb
+D:\C# scripts\RepositAuto\FamiliyaAutoservice_1\FamiliyaAutoservice_1\obj\Debug\SingUpPage.g.cs
+D:\C# scripts\RepositAuto\FamiliyaAutoservice_1\FamiliyaAutoservice_1\obj\Debug\SingUpPage.baml

@@ -25,7 +25,7 @@ namespace FamiliyaAutoservice_1
         {
             InitializeComponent();
 
-            if(SelectedService != null)
+            if (SelectedService != null)
             {
                 _currentServise = SelectedService;
             }
@@ -37,38 +37,58 @@ namespace FamiliyaAutoservice_1
         {
             StringBuilder errors = new StringBuilder();
 
-            if(string.IsNullOrWhiteSpace(_currentServise.Title))
+            if (string.IsNullOrWhiteSpace(_currentServise.TItle))
                 errors.AppendLine("Укажите название услуги");
+
             if (_currentServise.Cost == 0)
                 errors.AppendLine("Укажите стоимость услуги");
-            
+
             if (_currentServise.Discount < 0 || _currentServise.Discount > 100)
                 errors.AppendLine("Укажите скидку");
 
             if (string.IsNullOrWhiteSpace(_currentServise.DurationInSeconds))
                 errors.AppendLine("Укажите длительность услуги");
+
+            if (Convert.ToInt32(_currentServise.DurationInSeconds) > 240)
+                errors.AppendLine("Длительность не может быть больше 240 минут");
+
+            if (_currentServise.Discount < 0 || _currentServise.Discount > 100)
+                errors.AppendLine("Укажите скидку 0 до 100");
+
             if (string.IsNullOrWhiteSpace(_currentServise.Discount.ToString()))
                 _currentServise.Discount = 0;
-            
-            if(errors.Length > 0)
+
+            if (errors.Length > 0)
             {
                 MessageBox.Show(errors.ToString());
                 return;
             }
-            
-            if (_currentServise.ID == 0)
-                Baranov_AutoserviceEntities3.GetContext().Service.Add(_currentServise);
+            var allServices = Baranov_AutoserviceEntities4.GetContext().Service.ToList();
+            allServices = allServices.Where(p => p.TItle == _currentServise.TItle).ToList();
 
-            try
+            if (allServices.Count == 0 || (_currentServise.ID != 0 && allServices.Count <= 1))
             {
-                Baranov_AutoserviceEntities3.GetContext().SaveChanges();
-                MessageBox.Show("Информация сохранена");
-                Manager.MainFrame.GoBack();
+                if (_currentServise.ID == 0)
+                    Baranov_AutoserviceEntities4.GetContext().Service.Add(_currentServise);
+                try
+                {
+                    Baranov_AutoserviceEntities4.GetContext().SaveChanges();
+                    MessageBox.Show("Информация сохранена");
+                    Manager.MainFrame.GoBack();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message.ToString());
+                MessageBox.Show("Уже существует такая услуга");
             }
+
+            if (_currentServise.ID == 0)
+                Baranov_AutoserviceEntities4.GetContext().Service.Add(_currentServise);
+
         }
     }
 }

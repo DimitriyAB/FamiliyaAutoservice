@@ -13,19 +13,20 @@ namespace FamiliyaAutoservice_1
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Baranov_AutoserviceEntities3 : DbContext
+    public partial class Baranov_AutoserviceEntities4 : DbContext
     {
-        private static Baranov_AutoserviceEntities3 _context;
-
-        public static Baranov_AutoserviceEntities3 GetContext()
+        private static Baranov_AutoserviceEntities4 _context;
+        
+        public static Baranov_AutoserviceEntities4 GetContext()
         {
             if(_context == null)
-                _context = new Baranov_AutoserviceEntities3();
+                _context = new Baranov_AutoserviceEntities4();
             return _context;
         }
-        public Baranov_AutoserviceEntities3()
-            : base("name=Baranov_AutoserviceEntities3")
+        public Baranov_AutoserviceEntities4()
+            : base("name=Baranov_AutoserviceEntities4")
         {
+
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -44,5 +45,7 @@ namespace FamiliyaAutoservice_1
         public virtual DbSet<Service> Service { get; set; }
         public virtual DbSet<ServicePhoto> ServicePhoto { get; set; }
         public virtual DbSet<Tag> Tag { get; set; }
+
+        
     }
 }

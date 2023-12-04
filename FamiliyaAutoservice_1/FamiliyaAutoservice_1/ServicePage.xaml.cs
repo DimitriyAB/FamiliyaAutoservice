@@ -27,7 +27,7 @@ namespace FamiliyaAutoservice_1
         public ServicePage()
         {
             InitializeComponent();
-            var currentServices = Baranov_AutoserviceEntities3.GetContext().Service.ToList();
+            var currentServices = Baranov_AutoserviceEntities4.GetContext().Service.ToList();
             ServiceListView.ItemsSource = currentServices;
             ComboType.SelectedIndex = 0;
             UpdateService();
@@ -35,7 +35,7 @@ namespace FamiliyaAutoservice_1
         }
         private void UpdateService()
         {
-            var currentServices = Baranov_AutoserviceEntities3.GetContext().Service.ToList();
+            var currentServices = Baranov_AutoserviceEntities4.GetContext().Service.ToList();
 
             if (ComboType.SelectedIndex == 0)
             {
@@ -63,7 +63,7 @@ namespace FamiliyaAutoservice_1
             }
 
 
-            currentServices = currentServices.Where(p => p.Title.ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
+            currentServices = currentServices.Where(p => p.TItle.ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
 
             if (RButtonDown.IsChecked.Value)
             {
@@ -82,6 +82,7 @@ namespace FamiliyaAutoservice_1
 
 
         }
+
         private void TBoxSearch_TextChanged(object sender, EventArgs e)
         {
             UpdateService();
@@ -110,8 +111,8 @@ namespace FamiliyaAutoservice_1
         {
             if (Visibility == Visibility.Visible)
             {
-                Baranov_AutoserviceEntities3.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
-                ServiceListView.ItemsSource = Baranov_AutoserviceEntities3.GetContext().Service.ToList();
+                Baranov_AutoserviceEntities4.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+                ServiceListView.ItemsSource = Baranov_AutoserviceEntities4.GetContext().Service.ToList();
                 UpdateService();
             }
         }
@@ -125,7 +126,7 @@ namespace FamiliyaAutoservice_1
         {
             var currentService = (sender as Button).DataContext as Service;
 
-            var currentClientServices = Baranov_AutoserviceEntities3.GetContext().ClientService.ToList();
+            var currentClientServices = Baranov_AutoserviceEntities4.GetContext().ClientService.ToList();
             currentClientServices = currentClientServices.Where(p => p.ServiceID == currentService.ID).ToList();
 
             if (currentClientServices.Count != 0)
@@ -138,9 +139,9 @@ namespace FamiliyaAutoservice_1
                 {
                     try
                     {
-                        Baranov_AutoserviceEntities3.GetContext().Service.Remove(currentService);
-                        Baranov_AutoserviceEntities3.GetContext().SaveChanges();
-                        ServiceListView.ItemsSource = Baranov_AutoserviceEntities3.GetContext().Service.ToList();
+                        Baranov_AutoserviceEntities4.GetContext().Service.Remove(currentService);
+                        Baranov_AutoserviceEntities4.GetContext().SaveChanges();
+                        ServiceListView.ItemsSource = Baranov_AutoserviceEntities4.GetContext().Service.ToList();
                         UpdateService();
                     }
                     catch (Exception ex)
@@ -151,11 +152,10 @@ namespace FamiliyaAutoservice_1
             }
         }
 
-        private void ChangePage(object direction, int? selectedPage)
+        private void ChangePage(int direction, int? selectedPage)
         {
             CurrentPagelist.Clear();
             CounteRecords = TableList.Count;
-
             if (CounteRecords % 10 > 0)
             {
                 CountPage = CounteRecords / 10 + 1;
@@ -165,10 +165,9 @@ namespace FamiliyaAutoservice_1
                 CountPage = CounteRecords / 10;
             }
 
-            Boolean Ifupdate = true;
+            Boolean IFUpdate = true;
 
             int min;
-
             if (selectedPage.HasValue)
             {
                 if (selectedPage >= 0 && selectedPage <= CountPage)
@@ -186,56 +185,54 @@ namespace FamiliyaAutoservice_1
                 switch (direction)
                 {
                     case 1:
-                        if(CurrentPage > 0)
+                        if (CurrentPage > 0)
                         {
                             CurrentPage--;
-                            min = CurrentPage*10+10< CounteRecords ? CurrentPage*10+10 : CounteRecords;
-                            for(int i = CurrentPage*10; i < min; i++)
+                            min = CurrentPage * 10 + 10 < CounteRecords ? CurrentPage * 10 + 10 : CounteRecords;
+                            for (int i = CurrentPage * 10; i < min; i++)
                             {
                                 CurrentPagelist.Add(TableList[i]);
                             }
                         }
                         else
                         {
-                            Ifupdate = false;
+                            IFUpdate = false;
                         }
                         break;
                     case 2:
-                        if(CurrentPage < CountPage -1) 
+                        if (CurrentPage < CountPage - 1)
                         {
                             CurrentPage++;
-                            min = CurrentPage*10+10 < CounteRecords ? CurrentPage*10+10 : CounteRecords;
-                            for(int i = CurrentPage*10;i < min; i++)
+                            min = CurrentPage * 10 + 10 < CounteRecords ? CurrentPage * 10 + 10 : CounteRecords;
+                            for (int i = CurrentPage * 10; i < min; i++)
                             {
                                 CurrentPagelist.Add(TableList[i]);
                             }
                         }
                         else
                         {
-                            Ifupdate = false;
+                            IFUpdate = false;
                         }
                         break;
                 }
             }
 
-            if (Ifupdate)
+            if (IFUpdate)
             {
                 PageListBox.Items.Clear();
-
-                for(int i =1;i<=CountPage;i++)
+                for (int i = 1; i <= CountPage; i++)
                 {
                     PageListBox.Items.Add(i);
                 }
                 PageListBox.SelectedIndex = CurrentPage;
 
-                min = CurrentPage*10+10 < CounteRecords ? CurrentPage *10+10 : CounteRecords;
+                min = CurrentPage * 10 + 10 < CounteRecords ? CurrentPage * 10 + 10 : CounteRecords;
                 TBCount.Text = min.ToString();
-                TBAllRecords.Text = "из" + CounteRecords.ToString();
+                TBAllRecords.Text = " из " + CounteRecords.ToString();
 
                 ServiceListView.ItemsSource = CurrentPagelist;
                 ServiceListView.Items.Refresh();
             }
-
         }
         private void LeftDirButton_Click(object sender, RoutedEventArgs e)
         {
@@ -251,6 +248,11 @@ namespace FamiliyaAutoservice_1
         {
             ChangePage(0, Convert.ToInt32(PageListBox.SelectedItem.ToString()) - 1);
 
+        }
+
+        private void SignUpButton_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new SingUpPage((sender as Button).DataContext as Service));
         }
     }
 }

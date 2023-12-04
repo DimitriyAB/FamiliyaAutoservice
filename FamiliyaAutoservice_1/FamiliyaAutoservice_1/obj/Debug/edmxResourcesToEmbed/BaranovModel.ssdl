@@ -90,12 +90,11 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="TItle" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="MainImagePath" Type="nvarchar" MaxLength="1000" />
     <Property Name="DurationInSeconds" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Cost" Type="decimal" Precision="18" Scale="2" Nullable="false" />
     <Property Name="Discount" Type="float" />
-    <Property Name="Description" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="ServicePhoto">
     <Key>
@@ -169,7 +168,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ClientService_service_a_import">
+  <Association Name="FK_ClientService_Service">
     <End Role="Service" Type="Self.Service" Multiplicity="1" />
     <End Role="ClientService" Type="Self.ClientService" Multiplicity="*" />
     <ReferentialConstraint>
@@ -241,7 +240,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ServicePhoto_service_a_import">
+  <Association Name="FK_ServicePhoto_Service">
     <End Role="Service" Type="Self.Service" Multiplicity="1" />
     <End Role="ServicePhoto" Type="Self.ServicePhoto" Multiplicity="*" />
     <ReferentialConstraint>
@@ -307,7 +306,7 @@
       <End Role="Client" EntitySet="Client" />
       <End Role="ClientService" EntitySet="ClientService" />
     </AssociationSet>
-    <AssociationSet Name="FK_ClientService_service_a_import" Association="Self.FK_ClientService_service_a_import">
+    <AssociationSet Name="FK_ClientService_Service" Association="Self.FK_ClientService_Service">
       <End Role="Service" EntitySet="Service" />
       <End Role="ClientService" EntitySet="ClientService" />
     </AssociationSet>
@@ -331,7 +330,7 @@
       <End Role="Product" EntitySet="Product" />
       <End Role="ProductSale" EntitySet="ProductSale" />
     </AssociationSet>
-    <AssociationSet Name="FK_ServicePhoto_service_a_import" Association="Self.FK_ServicePhoto_service_a_import">
+    <AssociationSet Name="FK_ServicePhoto_Service" Association="Self.FK_ServicePhoto_Service">
       <End Role="Service" EntitySet="Service" />
       <End Role="ServicePhoto" EntitySet="ServicePhoto" />
     </AssociationSet>

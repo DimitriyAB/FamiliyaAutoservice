@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Хранилище Baranov_AutoserviceModelContainer" CdmEntityContainer="Baranov_AutoserviceEntities3">
+  <EntityContainerMapping StorageEntityContainer="Хранилище Baranov_AutoserviceModelContainer" CdmEntityContainer="Baranov_AutoserviceEntities4">
     <EntitySetMapping Name="Client">
       <EntityTypeMapping TypeName="Baranov_AutoserviceModel.Client">
         <MappingFragment StoreEntitySet="Client">
@@ -90,12 +90,11 @@
       <EntityTypeMapping TypeName="Baranov_AutoserviceModel.Service">
         <MappingFragment StoreEntitySet="Service">
           <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="TItle" ColumnName="TItle" />
           <ScalarProperty Name="MainImagePath" ColumnName="MainImagePath" />
           <ScalarProperty Name="DurationInSeconds" ColumnName="DurationInSeconds" />
           <ScalarProperty Name="Cost" ColumnName="Cost" />
           <ScalarProperty Name="Discount" ColumnName="Discount" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
